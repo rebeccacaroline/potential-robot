@@ -1,5 +1,5 @@
-var env = require('node-env-file');
-env('../path/to/.env');
+// var env = require('node-env-file');
+// env('../path/to/.env');
 
 $(document).ready(function() {
   getWeatherFromZip();
