@@ -1,3 +1,6 @@
+var env = require('node-env-file');
+env('../path/to/.env');
+
 $(document).ready(function() {
   getWeatherFromZip();
 });
@@ -7,7 +10,7 @@ $(document).ready(function() {
       event.preventDefault();
       zip = document.getElementById('zipcode').value
       $.ajax({
-        url : "http://api.wunderground.com/api/59fc6ecd129fa3cb/geolookup/conditions/q/"+zip+".json",
+        url : "https://api.wunderground.com/api/59fc6ecd129fa3cb/geolookup/conditions/q/"+zip+".json",
         type: 'get',
         dataType : "jsonp",
         success : function(parsed_json) {
@@ -16,7 +19,6 @@ $(document).ready(function() {
           // alert('The weather in '+location+' is '+temp_f);
           console.log(temp_f);
           outfit(temp_f);
-
           }
         })
     })
