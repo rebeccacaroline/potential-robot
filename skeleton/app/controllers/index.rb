@@ -16,7 +16,7 @@ post '/sessions' do
   else
     @error
   end
-  redirect '/'
+  #redirect '/'
 end
 
 delete '/sessions/:id' do
@@ -26,16 +26,16 @@ end
 
 #----------- USERS -----------
 
-get '/users/new' do
-  erb :sign_up
-end
+# get '/users/new' do
+#   erb :sign_up
+# end
 
 post '/users' do
-  @user = User.create(params[:user])
+  @user = User.new(params[:user])
   if @user.save
     session[:id] = @user.id
   end
-  redirect '/'
+  #redirect '/'
 end
 
 

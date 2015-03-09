@@ -7,6 +7,8 @@
   <input type='submit' value='Get your outfit!' id='submit-zip'>
 </form>
 
+<%if !logged_in?%>
+
 <div class="container">
   <h1>Sign In</h1>
 
@@ -20,10 +22,11 @@
     <label class="label" for="password">Password</label>
     <input type="password" name="password" placeholder="6 or more characters">
     <br>
-    <div class="submit"><input type="submit" value="Sign In"></div>
+    <div class="submit"><input type="submit" value="Sign In" id='sign-in'></div>
   </form>
 
 </div>
+
 
 <div class="container">
   <h1>Sign Up</h1>
@@ -37,11 +40,16 @@
     <input type="email" name="user[email]" placeholder="e.g., me@example.com" >
     <br>
 
+    <label class="label" for="zip_code">Your Zip Code</label>
+    <input type="integer" name="user[email]" placeholder="e.g., me@example.com" >
+    <br>
+
     <label class="label" for="password">Password</label>
     <input type="password" name="user[password]" placeholder="6 or more characters">
     <br>
 
-    <div class="submit"><input type="submit" value="Sign Up"></div>
+    <div class="submit"><input type="submit" value="Sign Up" id='sign-up'></div>
   </form>
 
 </div>
+<%end%>
