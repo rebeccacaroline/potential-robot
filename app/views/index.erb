@@ -1,13 +1,15 @@
 <p>Hello!</p>
 
+
+
+<%if !logged_in?%>
+
 <p>Put your zipcode here!</p>
 
 <form>
   <input type='text' name="zip" id='zipcode'>
   <input type='submit' value='Get your outfit!' id='submit-zip'>
 </form>
-
-<%if !logged_in?%>
 
 <div class="container">
   <h1>Sign In</h1>
@@ -16,7 +18,7 @@
     <div class="errors"><%= @error %></div>
   <% end %>
 
-  <form id="sign-in" method="post" action="/sessions">
+  <form class="sign-in" method="post" action="/sessions">
     <label class="label" for="email">Email</label>
     <input type="email" name="email" placeholder="e.g., me@example.com" value="<%= @email %>"><br>
     <label class="label" for="password">Password</label>
@@ -27,13 +29,12 @@
 
 </div>
 
-
 <div class="container">
   <h1>Sign Up</h1>
 
-  <form id="sign-up" method="post" action="/users">
+  <form class="sign-up" method="post" action="/users">
     <label class="label" for="name">Name</label>
-    <input type="text" name="user[name]" placeholder="e.g., joe" >
+    <input type="text" name="user[username]" placeholder="e.g., joe" >
     <br>
 
     <label class="label" for="email">Email</label>
@@ -41,7 +42,7 @@
     <br>
 
     <label class="label" for="zip_code">Your Zip Code</label>
-    <input type="integer" name="user[email]" placeholder="e.g., me@example.com" >
+    <input type="integer" name="user[zip_code]" >
     <br>
 
     <label class="label" for="password">Password</label>
@@ -52,4 +53,7 @@
   </form>
 
 </div>
+<%else%>
+
+  <button class="logout" id="">Logout</button>
 <%end%>

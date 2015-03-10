@@ -3,6 +3,9 @@
 
 $(document).ready(function() {
   getWeatherFromZip();
+  newUser();
+  signIn();
+  logout();
 });
 
   var getWeatherFromZip = function(){
@@ -18,6 +21,7 @@ $(document).ready(function() {
           var temp_f = parsed_json['current_observation']['temp_f'];
           // alert('The weather in '+location+' is '+temp_f);
           console.log(temp_f);
+          console.log(parsed_json['current_observation']['precip_today_metric']);
           outfit(temp_f);
           }
         })
@@ -54,8 +58,10 @@ $(document).ready(function() {
         url: '/users',
         type: 'post',
         data: formData,
-        success: function(){
+        success: function(id){
           alert("You are now a user!");
+          $('.sign-in').hide();
+          $('.sign-up').hide();
         }
       })
     })
@@ -69,8 +75,24 @@ $(document).ready(function() {
         url: '/sessions',
         type: 'post',
         data: formData,
-        success: function(){
-          alert("You are now a user!");
+        success: function(id){
+          alert("You are signed in!");
+          $('.sign-in').hide();
+          $('.sign-up').hide();
+        }
+      })
+    })
+  }
+
+  var logout = function(){
+    $('.logout').on('click', function(event){
+      event.preventDefault();
+      console.log("hello!");
+      $.ajax({
+        url: '/sessions',
+        type: 'delete',
+        success: function(no_session){
+          alert("Goodbye!")
         }
       })
     })
