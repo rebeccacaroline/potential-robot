@@ -3,23 +3,25 @@ get '/' do
 end
 
 get '/sessions/new' do
-  erb :sign_in
+  @user = User.find(session[:id])
+  erb :landing_page
 end
 
 post '/sessions' do
-  content_type :json
   @user = User.where(email: params[:email]).first
   if @user.password == params[:password]
     session[:id] = @user.id
-    {id: @user.id}.to_json
   else
     @error
   end
+  redirect '/sessions/new'
 end
+
+
 
 delete '/sessions' do
   session.clear
-  # redirect '/'
+   # redirect '/'
 end
 
 
@@ -30,6 +32,7 @@ post '/users' do
     session[:id] = @user.id
     {id: @user.id}.to_json
   end
+  erb :new_user_page
 end
 
 

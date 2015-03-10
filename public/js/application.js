@@ -3,8 +3,8 @@
 
 $(document).ready(function() {
   getWeatherFromZip();
-  newUser();
-  signIn();
+  //newUser();
+  //signIn();
   logout();
 });
 
@@ -50,39 +50,39 @@ $(document).ready(function() {
       }
   }
 
-  var newUser = function(){
-    $('#sign-up').on('click', function(event){
-      event.preventDefault();
-      formData = $(this).serialize();
-      $.ajax({
-        url: '/users',
-        type: 'post',
-        data: formData,
-        success: function(id){
-          alert("You are now a user!");
-          $('.sign-in').hide();
-          $('.sign-up').hide();
-        }
-      })
-    })
-  }
+  // var newUser = function(){
+  //   $('#sign-up').on('click', function(event){
+  //     event.preventDefault();
+  //     formData = $(this).serialize();
+  //     $.ajax({
+  //       url: '/users',
+  //       type: 'post',
+  //       data: formData,
+  //       success: function(id){
+  //         alert("You are now a user!");
+  //         $('.sign-in').hide();
+  //         $('.sign-up').hide();
+  //       }
+  //     })
+  //   })
+  // }
 
-  var signIn = function(){
-    $('#sign-in').on('click', function(event){
-      event.preventDefault();
-      formData = $(this).serialize();
-      $.ajax({
-        url: '/sessions',
-        type: 'post',
-        data: formData,
-        success: function(id){
-          alert("You are signed in!");
-          $('.sign-in').hide();
-          $('.sign-up').hide();
-        }
-      })
-    })
-  }
+  // var signIn = function(){
+  //   $('#sign-in').on('click', function(event){
+  //     event.preventDefault();
+  //     formData = $(this).serialize();
+  //     $.ajax({
+  //       url: '/sessions',
+  //       type: 'post',
+  //       data: formData,
+  //       success: function(id){
+  //         alert("You are signed in!");
+  //         $('.sign-in').hide();
+  //         $('.sign-up').hide();
+  //       }
+  //     })
+  //   })
+  // }
 
   var logout = function(){
     $('.logout').on('click', function(event){
@@ -92,7 +92,9 @@ $(document).ready(function() {
         url: '/sessions',
         type: 'delete',
         success: function(no_session){
-          alert("Goodbye!")
+          $('.sign-in').show();
+          $('.sign-up').show();
+          alert("Goodbye!");
         }
       })
     })
