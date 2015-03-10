@@ -19,6 +19,9 @@
   <title></title>
 </head>
 <body>
+  <%if logged_in?%>
+    <form action="logout">Logout</button>
+    <%end%>
   <%= yield %>
   <footer>Weather info courtesy of Weather Underground!</footer>
 </body>

@@ -84,18 +84,18 @@ $(document).ready(function() {
   //   })
   // }
 
-  var logout = function(){
-    $('.logout').on('click', function(event){
-      event.preventDefault();
-      console.log("hello!");
-      $.ajax({
-        url: '/sessions',
-        type: 'delete',
-        success: function(no_session){
-          $('.sign-in').show();
-          $('.sign-up').show();
-          alert("Goodbye!");
-        }
-      })
-    })
-  }
+  // var logout = function(){
+  //   $('.logout').on('click', function(event){
+  //     event.preventDefault();
+  //     console.log("hello!");
+  //     $.ajax({
+  //       url: '/sessions',
+  //       type: 'delete',
+  //       success: function(no_session){
+  //         $('.sign-in').show();
+  //         $('.sign-up').show();
+  //         alert("Goodbye!");
+  //       }
+  //     })
+  //   })
+  // }
