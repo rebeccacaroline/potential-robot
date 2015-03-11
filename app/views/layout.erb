@@ -20,9 +20,12 @@
 </head>
 <body>
   <%if logged_in?%>
-    <form action="logout">Logout</button>
+    <form action='/sessions/id' method='post'>
+      <input type='hidden' name='_method' value="delete">
+      <input type="submit" value="Logout">
+    </form>
     <%end%>
   <%= yield %>
-  <footer>Weather info courtesy of Weather Underground!</footer>
+  <footer class="white">Weather info courtesy of Weather Underground!</footer>
 </body>
 </html>

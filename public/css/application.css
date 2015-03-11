@@ -1,22 +1,17 @@
 body {
-  background: url( 'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xfp1/v/t1.0-9/10455576_791498120903455_6065112611021682699_n.jpg?oh=3a81eb4cf230442945c88969e1abc5d1&oe=557D29C1&__gda__=1435296584_f97596aa96541832afe3ea3923c142f0' ) no-repeat center center fixed;
+  background: url( 'http://i.imgur.com/ulR2kk8.jpg' ) no-repeat center center fixed;
   background-size: cover;
 }
 
-p {
-  color: white;
-}
-
-label {
+.white {
   color: white;
 }
 
 footer {
-  color: white;
   text-align: center;
   margin-top: 10%;
 }
 
-h2 {
-  color: white;
+fieldset{
+  width: 17%;
 }

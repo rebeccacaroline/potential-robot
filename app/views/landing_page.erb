@@ -1,9 +1,9 @@
 <div class="container">
-  <h2>Welcome, <%=@user.username%>!</h2>
-  <p>The forecast for <%=@location%> is <%=@temp%> degrees and <%=@weather%>. You should wear (outfit) today.</p>
+  <h2 class="white">Welcome, <%=@user.username%>!</h2>
+  <p class="white">The forecast for <%=@location%> is <%=@temp%> degrees and <%=@weather%>. You should wear (outfit) today.</p>
   <%if @weather.include?("rain")%>
-    <p>It's going to rain - make sure to bring an umbrella!</p>
+    <p class="white">It's going to rain - make sure to bring an umbrella!</p>
   <%elsif @weather.include?("clear")%>
-    <p>It's going to be sunny - make sure to wear sunscreen!</p>
+    <p class="white">It's going to be sunny - make sure to wear sunscreen!</p>
   <%end%>
 </div>

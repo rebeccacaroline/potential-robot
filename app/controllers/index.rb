@@ -9,7 +9,6 @@ get '/sessions/new' do
   @location = response.parsed_response["location"]["city"]
   @temp = response.parsed_response["current_observation"]["temp_f"].to_i
   @weather = response.parsed_response["current_observation"]["weather"].downcase
-  p response.parsed_response
   erb :landing_page
 end
 
@@ -24,21 +23,19 @@ post '/sessions' do
 end
 
 
-
-delete '/sessions' do
+delete '/sessions/id' do
   session.clear
-   # redirect '/'
+  redirect '/'
 end
-
 
 post '/users' do
-  content_type :json
-  @user = User.new(params[:user])
+  @user = User.new(params)
+  p params
   if @user.save
     session[:id] = @user.id
-    {id: @user.id}.to_json
   end
-  erb :new_user_page
+  redirect '/sessions/new'
 end
+
 
 

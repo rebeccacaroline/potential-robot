@@ -1,59 +1,21 @@
-<p>Hello!</p>
+<p class="white">Hello!</p>
 
 
 
 <%if !logged_in?%>
 
-<p>Put your zipcode here!</p>
+<p class="white">Put your zipcode here!</p>
 
 <form>
   <input type='text' name="zip" id='zipcode'>
   <input type='submit' value='Get your outfit!' id='submit-zip'>
 </form>
 
+<%= erb :_sign_in, :layout => false%>
 
-<div class="container">
-  <h1>Sign In</h1>
+<%= erb :_sign_up, :layout => false%>
 
-  <% if @error %>
-    <div class="errors"><%= @error %></div>
-  <% end %>
 
-  <form class="sign-in" method="post" action="/sessions">
-    <label class="label" for="email">Email</label>
-    <input type="email" name="email" placeholder="e.g., me@example.com" value="<%= @email %>"><br>
-    <label class="label" for="password">Password</label>
-    <input type="password" name="password" placeholder="6 or more characters">
-    <br>
-    <div class="submit"><input type="submit" value="Sign In" id='sign-in'></div>
-  </form>
-
-</div>
-
-<div class="container">
-  <h1>Sign Up</h1>
-
-  <form class="sign-up" method="post" action="/users">
-    <label class="label" for="name">Name</label>
-    <input type="text" name="user[username]" placeholder="e.g., joe" >
-    <br>
-
-    <label class="label" for="email">Email</label>
-    <input type="email" name="user[email]" placeholder="e.g., me@example.com" >
-    <br>
-
-    <label class="label" for="zip_code">Your Zip Code</label>
-    <input type="integer" name="user[zip_code]" >
-    <br>
-
-    <label class="label" for="password">Password</label>
-    <input type="password" name="user[password]" placeholder="6 or more characters">
-    <br>
-
-    <div class="submit"><input type="submit" value="Sign Up" id='sign-up'></div>
-  </form>
-
-</div>
 <%end%>
 
 

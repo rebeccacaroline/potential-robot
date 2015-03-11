@@ -5,7 +5,7 @@ $(document).ready(function() {
   getWeatherFromZip();
   //newUser();
   //signIn();
-  logout();
+  // logout();
 });
 
   var getWeatherFromZip = function(){
@@ -30,7 +30,7 @@ $(document).ready(function() {
 
   var outfit = function(temp){
       if (temp < 30){
-        alert("Just stay inside. If you need to go outside, wear ski attire.");
+        alert("Seriously consider moving elsewhere.");
       } else if (temp > 30 && temp < 40){
         alert("Jeans, boots, long-sleeved shirt, sweater AND jacket. Maybe wear some tights under those jeans.");
       } else if (temp > 40 && temp < 50) {
@@ -50,8 +50,13 @@ $(document).ready(function() {
       }
   }
 
+
+
+
+  // $('input[name="user[style]"]:checked').val();
+
   // var newUser = function(){
-  //   $('#sign-up').on('click', function(event){
+  //   $('#sign-up').on('submit', function(event){
   //     event.preventDefault();
   //     formData = $(this).serialize();
   //     $.ajax({
