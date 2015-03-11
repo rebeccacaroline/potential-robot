@@ -9,6 +9,9 @@ get '/sessions/new' do
   @location = response.parsed_response["location"]["city"]
   @temp = response.parsed_response["current_observation"]["temp_f"].to_i
   @weather = response.parsed_response["current_observation"]["weather"].downcase
+  outfit = Outfit.where("range_start < #{@temp} AND range_end > #{@temp}").each do |poop|
+      p poop
+    end
   erb :landing_page
 end
 
