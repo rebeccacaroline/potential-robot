@@ -19,13 +19,19 @@
   <title></title>
 </head>
 <body>
+  <div class="background">
+  <div id='logout'>
   <%if logged_in?%>
     <form action='/sessions/id' method='post'>
       <input type='hidden' name='_method' value="delete">
       <input type="submit" value="Logout">
     </form>
     <%end%>
-  <%= yield %>
-  <footer class="white">Weather info courtesy of Weather Underground!</footer>
+  </div>
+  <div id='everything-else'>
+    <%= yield %>
+    <footer class="white">Weather info courtesy of Weather Underground!</footer>
+  </div>
+  </div>
 </body>
 </html>
