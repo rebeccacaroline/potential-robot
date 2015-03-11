@@ -1,6 +1,6 @@
-<div class="container">
-  <h2 class="white">Welcome, <%=@user.username%>!</h2>
-  <p class="white">The forecast for <%=@location%> is <%=@temp%> degrees and <%=@weather%>.
+<div class="landing-page">
+  <h2 class="white weather-heading">Welcome, <%=@user.username%>!</h2>
+  <p class="white nerdy">The forecast for <%=@location%> is <%=@temp%> degrees and <%=@weather%>.
     <% if @outerwear != nil%>
     You should wear a <%=@top.name%>, a <%=@outerwear.name%>, <%=@bottom.name%>, and <%=@shoe.name%> today.</p>
     <%else%>
