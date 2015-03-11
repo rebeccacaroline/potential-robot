@@ -1,6 +1,11 @@
 <div class="container">
   <h2 class="white">Welcome, <%=@user.username%>!</h2>
-  <p class="white">The forecast for <%=@location%> is <%=@temp%> degrees and <%=@weather%>. You should wear (outfit) today.</p>
+  <p class="white">The forecast for <%=@location%> is <%=@temp%> degrees and <%=@weather%>.
+    <% if @outerwear != nil%>
+    You should wear a <%=@top.name%>, a <%=@outerwear.name%>, <%=@bottom.name%>, and <%=@shoe.name%> today.</p>
+    <%else%>
+    You should wear a <%=@top.name%>, <%=@bottom.name%> and <%=@shoe.name%> today.</p>
+    <%end%>
   <%if @weather.include?("rain")%>
     <p class="white">It's going to rain - make sure to bring an umbrella!</p>
   <%elsif @weather.include?("clear")%>

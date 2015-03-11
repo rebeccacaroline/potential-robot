@@ -9,9 +9,10 @@ get '/sessions/new' do
   @location = response.parsed_response["location"]["city"]
   @temp = response.parsed_response["current_observation"]["temp_f"].to_i
   @weather = response.parsed_response["current_observation"]["weather"].downcase
-  outfit = Outfit.where("range_start < #{@temp} AND range_end > #{@temp}").each do |poop|
-      p poop
-    end
+  @top = Outfit.where("range_start < #{@temp} AND range_end > #{@temp} AND #{@user.style} = true AND top = true AND outerwear = false").sample
+  @bottom = Outfit.where("range_start < #{@temp} AND range_end > #{@temp} AND #{@user.style} = true AND bottom = true").sample
+  @outerwear = Outfit.where("range_start < #{@temp} AND range_end > #{@temp} AND #{@user.style} = true AND top = true AND outerwear = true").sample ||= nil
+  @shoe = Outfit.where("range_start < #{@temp} AND range_end > #{@temp} AND #{@user.style} = true AND shoe = true").sample
   erb :landing_page
 end
 

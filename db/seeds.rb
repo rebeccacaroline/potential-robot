@@ -8,6 +8,6 @@ Outfit.create(name: "shorts", masculine: true, feminine: true, top: false, botto
 Outfit.create(name: "skirt", masculine: false, feminine: true, top: false, bottom: true, outerwear: false, shoe: false, range_start: 65, range_end: 90)
 Outfit.create(name: "sundress", masculine: false, feminine: true, top: false, bottom: true, outerwear: false, shoe: false, range_start: 65, range_end: 90)
 Outfit.create(name: "sneakers", masculine: true, feminine: true, top: false, bottom: false, outerwear: false, shoe: true, range_start: 30, range_end: 80)
-Outfit.create(name: "sandals", masculine: true, feminine: true, top: false, bottom: false, outerwear: false, shoe: true, range_start: 60, range_end: 90)
+Outfit.create(name: "sandals", masculine: true, feminine: true, top: false, bottom: false, outerwear: false, shoe: true, range_start: 70, range_end: 90)
 Outfit.create(name: "flip-flops", masculine: true, feminine: true, top: false, bottom: false, outerwear: false, shoe: true, range_start: 70, range_end: 90)
 Outfit.create(name: "boots", masculine: true, feminine: true, top: false, bottom: false, outerwear: false, shoe: true, range_start: 30, range_end: 55)
