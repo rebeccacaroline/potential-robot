@@ -12,14 +12,16 @@
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/css/application.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
+
   <link href='http://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
   <title></title>
 </head>
 <body>
-  <div class="background">
   <div id='logout'>
   <%if logged_in?%>
     <form action='/sessions/id' method='post'>
@@ -28,10 +30,7 @@
     </form>
     <%end%>
   </div>
-  <div id='everything-else'>
     <%= yield %>
     <footer class="white" id="footer-color">Weather info courtesy of Weather Underground!</footer>
-  </div>
-  </div>
 </body>
 </html>

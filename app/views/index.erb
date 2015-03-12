@@ -1,20 +1,35 @@
-<h3 class="white mid-page">Hello!</h3>
-
-
 
 <%if !logged_in?%>
 
-<h5 class="white mid-page">Put your zipcode here!</h5>
 
-<form>
-  <input type='text' name="zip" id='zipcode'>
-  <input type='submit' value='Get your outfit!' id='submit-zip'>
-</form>
 
-<%= erb :_sign_in, :layout => false%>
 
-<%= erb :_sign_up, :layout => false%>
+<div class="side-by-side">
 
+  <div class='sign-inz'>
+    <%= erb :_sign_in, :layout => false%>
+  </div>
+
+
+
+  <div class='site-name white'>
+    <h1>Who Says? Drew Says!</h1>
+  </div>
+
+
+
+  <div class='sign_upz'>
+    <%= erb :_sign_up, :layout => false%>
+  </div>
+</div>
+
+<div class="beginning">
+  <h5 class="white">Put your zipcode here!</h5>
+  <form class="mid-page">
+    <input type='text' name="zip" id='zipcode'>
+    <input type='submit' value='Get your outfit!' id='submit-zip'>
+  </form>
+</div>
 
 <%end%>
 

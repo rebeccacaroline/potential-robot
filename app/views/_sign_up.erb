@@ -1,31 +1,30 @@
-<div class="container">
+
   <h1 class="white">Sign Up</h1>
 
   <form class="sign-up" method="post" action="/users">
-    <label class="label white" for="name">Name</label>
+    <label class="white labelz name" for="name">Name</label>
     <input type="text" name="username" placeholder="e.g., joe" >
     <br>
 
-    <label class="label white" for="email">Email</label>
+    <label class="white labelz email" for="email">Email</label>
     <input type="email" name="email" placeholder="e.g., me@example.com" >
     <br>
 
-    <label class="label white" for="zip_code">Your Zip Code</label>
+    <label class="white labelz" for="zip_code">Your Zip Code</label>
     <input type="integer" name="zip_code" >
     <br>
 
-    <label class="label white" for="password">Password</label>
+    <label class="white labelz password" for="password">Password</label>
     <input type="password" name="password" placeholder="6 or more characters">
     <br>
-
-      <legend class="white">Your Style:</legend>
-      <input type="radio" name="style" id="masc-style" value="masculine">
-      <label for="masc-style" class="white">Masculine</label>
-      <input type="radio" name="style" id="fem-style" value="feminine">
-      <label for="fem-style" class="white">Feminine</label>
-      <br>
+      <div class='field-set'>
+        <legend class="white labelz">Your Style:</legend>
+        <input type="radio" name="style" id="masc-style" value="masculine">
+        <label for="masc-style" class="white labelz">Masculine</label>
+        <input type="radio" name="style" id="fem-style" value="feminine">
+        <label for="fem-style" class="white labelz">Feminine</label>
+      </div>
 
     <div class="submit"><input type="submit" value="Sign Up" id='sign-up'></div>
   </form>
 
-</div>

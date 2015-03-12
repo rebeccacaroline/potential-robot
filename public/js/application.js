@@ -3,9 +3,6 @@
 
 $(document).ready(function() {
   getWeatherFromZip();
-  //newUser();
-  //signIn();
-  // logout();
 });
 
   var getWeatherFromZip = function(){
@@ -19,7 +16,6 @@ $(document).ready(function() {
         success : function(parsed_json) {
           var location = parsed_json['location']['city'];
           var temp_f = parsed_json['current_observation']['temp_f'];
-          // alert('The weather in '+location+' is '+temp_f);
           console.log(temp_f);
           console.log(parsed_json['current_observation']['precip_today_metric']);
           outfit(temp_f);
@@ -51,10 +47,6 @@ $(document).ready(function() {
   }
 
 
-
-
-  // $('input[name="user[style]"]:checked').val();
-
   // var newUser = function(){
   //   $('#sign-up').on('submit', function(event){
   //     event.preventDefault();
@@ -67,6 +59,7 @@ $(document).ready(function() {
   //         alert("You are now a user!");
   //         $('.sign-in').hide();
   //         $('.sign-up').hide();
+  //         $
   //       }
   //     })
   //   })

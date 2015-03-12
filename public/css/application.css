@@ -1,3 +1,9 @@
+* {
+   -webkit-font-smoothing:antialiased;
+   /*border: 1px solid black;*/
+}
+
+
 body {
   background: url( 'http://www.hdwallpaperscool.com/wp-content/uploads/2014/09/road-and-cloudy-blue-sky-new-desktop-wallpapers-in-high-resolution-fullscreen.jpg' ) no-repeat center center fixed;
   background-size: cover;
@@ -12,15 +18,11 @@ body {
 
 footer {
   text-align: center;
-  margin-top: 10%;
+  /*margin-top: 50%;*/
 }
 
-fieldset{
+field-set{
   width: 17%;
-}
-
-.mid-page {
-  margin-left: 30%;
 }
 
 h5 {
@@ -48,7 +50,62 @@ h3 {
   font-size: 1em;
   /*border: 1px solid black;*/
   width: 40%;
-  margin: auto;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 38%;
 }
 
+labelz {
+  font-size: 1em;
+}
 
+.name {
+  margin-right: 74px;
+}
+
+.email {
+  margin-right: 75px;
+}
+
+.password {
+  margin-right: 45px;
+}
+
+.e-mail {
+  margin-right: 31px;
+}
+
+.side-by-side {
+  display: flex;
+/*  clear: both;
+  width: 100%;*/
+}
+
+.beginning {
+  width: 30%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: -20%;
+
+}
+
+#logout {
+  width: 30%;
+}
+
+.site-name {
+  width: 33%;
+  display: inline;
+  float: none;
+}
+
+.sign-inz {
+  width: 33%;
+  float: left;
+  /*margin-top: 9%;*/
+}
+
+.sign_upz{
+  width: 33%;
+  float: right;
+}
