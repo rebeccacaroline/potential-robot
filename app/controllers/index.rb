@@ -41,5 +41,11 @@ post '/users' do
   redirect '/sessions/new'
 end
 
+put '/users/:id' do
+  user = User.find(params[:id])
+  user.update_attribute(zip_code: params[:zipcode])
+  user.save
+end
+
 
 

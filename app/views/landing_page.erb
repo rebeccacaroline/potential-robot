@@ -12,3 +12,12 @@
     <p class="white">It's going to be sunny - make sure to wear sunscreen!</p>
   <%end%>
 </div>
+
+<div class="zip-code-change white">
+  <p>Want to change your location?</p>
+  <form action='/users/<%=@user.id%>' method="post">
+    <input type='hidden' name='_method' value="put">
+    <input type='text' name='zipcode' placeholder="New Zip Code">
+    <input type="submit" value="Change!" class="zipcode-button">
+  </form>
+</div>
