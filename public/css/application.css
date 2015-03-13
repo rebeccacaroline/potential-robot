@@ -8,11 +8,12 @@ body {
   background: url( 'http://www.hdwallpaperscool.com/wp-content/uploads/2014/09/road-and-cloudy-blue-sky-new-desktop-wallpapers-in-high-resolution-fullscreen.jpg' ) no-repeat center center fixed;
   background-size: cover;
   cursor: url('http://i.imgur.com/kBVxu07.jpg'), default;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .white {
   color: #FFFF99;
-  font-family: 'Crimson Text', serif;
+  font-family: 'Open Sans Condensed', sans-serif;
   font-size: 1.5em;
 }
 
@@ -27,11 +28,13 @@ field-set{
 
 h5 {
   font-size: 1.25em;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 h3 {
   font-size: 1.5em;
   margin-top: 50px;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .landing-page {
@@ -56,10 +59,12 @@ h3 {
   margin-right: auto;
   margin-left: auto;
   margin-top: 38%;
+  font-weight: bold;
 }
 
 labelz {
   font-size: 1em;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .name {
@@ -87,6 +92,7 @@ labelz {
 .beginning {
   width: 29.65%;
   padding-left: 1%;
+  padding-bottom: 2%;
   margin-top: -18%;
   height: 40%;
   background-color: rgba(0,0,0,0.2);
@@ -111,6 +117,7 @@ labelz {
   height: 23%;
   margin-top: 3%;
   padding-left: 1%;
+  padding-bottom: 2%;
   margin-left: 20%;
   float: right;
   background-color: rgba(0,0,0,0.2);
@@ -122,6 +129,8 @@ labelz {
   height: 23%;
   margin-top: 3%;
   padding-right: 1%;
+  padding-left: 1%;
+  padding-bottom: 2%;
   background-color: rgba(0,0,0,0.2);
 }
 
@@ -139,3 +148,8 @@ labelz {
 .zipcode-button {
   color: #4C4C4C;
 }
+
+* {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+

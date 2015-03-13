@@ -17,7 +17,7 @@
   <p>Want to change your location?</p>
   <form action='/users/<%=@user.id%>' method="post">
     <input type='hidden' name='_method' value="put">
-    <input type='text' name='zipcode' placeholder="New Zip Code">
+    <input type='text' name='zipcode' placeholder="New Zip Code" class="zipcode-button">
     <input type="submit" value="Change!" class="zipcode-button">
   </form>
 </div>

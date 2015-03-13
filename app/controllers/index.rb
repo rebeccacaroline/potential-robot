@@ -43,8 +43,9 @@ end
 
 put '/users/:id' do
   user = User.find(params[:id])
-  user.update_attribute(zip_code: params[:zipcode])
+  user.update(zip_code: params[:zipcode])
   user.save
+  redirect "/sessions/new"
 end
 
 
