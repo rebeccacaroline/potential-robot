@@ -5,7 +5,7 @@ end
 get '/sessions/new' do
   @user = User.find(session[:id])
   zip = @user.zip_code
-  response = HTTParty.get("https://api.wunderground.com/api/59fc6ecd129fa3cb/geolookup/conditions/q/#{zip}.json")
+  response = HTTParty.get("https://api.wunderground.com/api/#{ENV["SECRET_KEY"]}/geolookup/conditions/q/#{zip}.json")
   @location = response.parsed_response["location"]["city"]
   @temp = response.parsed_response["current_observation"]["temp_f"].to_i
   @weather = response.parsed_response["current_observation"]["weather"].downcase
