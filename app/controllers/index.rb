@@ -11,7 +11,9 @@ get '/sessions/new' do
   @weather = response.parsed_response["current_observation"]["weather"].downcase
   @top = Outfit.where("range_start < #{@temp} AND range_end > #{@temp} AND #{@user.style} = true AND top = true AND outerwear = false").sample
   @bottom = Outfit.where("range_start < #{@temp} AND range_end > #{@temp} AND #{@user.style} = true AND bottom = true").sample
-  @outerwear = Outfit.where("range_start < #{@temp} AND range_end > #{@temp} AND #{@user.style} = true AND top = true AND outerwear = true").sample ||= nil
+  if @temp < 70
+    @outerwear = Outfit.where("range_start < #{@temp} AND range_end > #{@temp} AND #{@user.style} = true AND top = true AND outerwear = true").sample
+  end
   @shoe = Outfit.where("range_start < #{@temp} AND range_end > #{@temp} AND #{@user.style} = true AND shoe = true").sample
   erb :landing_page
 end
