@@ -5,13 +5,14 @@ $(document).ready(function() {
   var getWeatherFromZip = function(){
     $('#submit-zip').on('click', function(event){
       event.preventDefault();
-      zip = document.getElementById('zipcode').value
+      var zip = document.getElementById('zipcode').value
+      console.log(zip)
       $.ajax({
         url: "/outfit",
         type: 'get',
-        data: zip,
-        dataType : "jsonp",
-        success : function(parsed_json) {
+        data: {code: zip},
+        success: function(parsed_json) {
+          console.log(parsed_json)
           var location = parsed_json['location']['city'];
           var temp_f = parsed_json['current_observation']['temp_f'];
           console.log(temp_f);
@@ -37,9 +38,9 @@ $(document).ready(function() {
       } else if (temp > 70 && temp < 80) {
         alert(weatherInLocation + "sundress and sandals.");
       } else if (temp > 80 && temp < 90) {
-        alert("Tank top and shorts and flip-flops");
+        alert(weatherInLocation + " Wear tank top and shorts and flip-flops");
       } else if (temp > 90) {
-        alert("Seriously consider moving elsewhere.");
+        alert(weatherInLocation + "Seriously consider moving elsewhere.");
       } else {
         alert("Put in a real zip code, silly!");
       }
