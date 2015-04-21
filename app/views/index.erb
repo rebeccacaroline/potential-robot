@@ -2,30 +2,26 @@
 <%if !logged_in?%>
 
 
-
-
-<div class="side-by-side">
-
-
-  <div class='site-name white'>
-    <h1>Who Says? Drew Says!</h1>
+<div class="container" >
+  <div class='site-name white eight columns'>
+    <p class='title'>Who Says? Drew Says!</p>
   </div>
 
-<div class='sign-inz'>
+  <div class='sign-inz four columns'>
     <%= erb :_sign_in, :layout => false%>
   </div>
 
-  <div class='sign_upz'>
+  <div class='sign_upz five columns'>
     <%= erb :_sign_up, :layout => false%>
   </div>
-</div>
 
-<div class="beginning">
-  <h5 class="white">Don't want an account? Put your zipcode here!</h5>
-  <form class="mid-page">
-    <input type='text' name="zip" id='zipcode'>
-    <input type='submit' value='Get your outfit!' id='submit-zip'>
-  </form>
+  <div class="beginning">
+   <h5 class="white">Don't want an account? Put your zipcode here!</h5>
+    <form >
+      <input type='text' name="zip" id='zipcode'>
+      <input type='submit' value='Get your outfit!' id='submit-zip'>
+    </form>
+  </div>
 </div>
 
 <%end%>
