@@ -1,23 +1,28 @@
-<div class="landing-page">
-  <h2 class="white weather-heading">Welcome, <%=@user.username%>!</h2>
-  <p class="white nerdy">The forecast for <%=@location%> is <%=@temp%> degrees and <%=@weather%>.
-    <% if @outerwear != nil%>
-    You should wear a <%=@top.name%>, a <%=@outerwear.name%>, <%=@bottom.name%>, and <%=@shoe.name%> today.</p>
-    <%else%>
-    You should wear a <%=@top.name%>, <%=@bottom.name%> and <%=@shoe.name%> today.</p>
+<div class="container">
+  <div class="landing-page">
+    <h2 class="white weather-heading">Welcome, <%=@user.username%>!</h2>
+    <p class="white nerdy">The forecast for <%=@location%> is <%=@temp%> degrees and <%=@weather%>.
+      <% if @outerwear != nil%>
+      You should wear a <%=@top.name%>, a <%=@outerwear.name%>, <%=@bottom.name%>, and <%=@shoe.name%> today.</p>
+      <%else%>
+      You should wear a <%=@top.name%>, <%=@bottom.name%> and <%=@shoe.name%> today.</p>
+      <%end%>
+    <%if @weather.include?("rain")%>
+      <p class="white">It's going to rain - make sure to bring an umbrella!</p>
+    <%elsif @weather.include?("clear")%>
+      <p class="white">It's going to be sunny - make sure to wear sunscreen!</p>
     <%end%>
-  <%if @weather.include?("rain")%>
-    <p class="white">It's going to rain - make sure to bring an umbrella!</p>
-  <%elsif @weather.include?("clear")%>
-    <p class="white">It's going to be sunny - make sure to wear sunscreen!</p>
-  <%end%>
+  </div>
+
+
+  <div class="zip-code-change white four columns">
+    <p>Want to change your location?</p>
+    <form action='/users/<%=@user.id%>' method="post">
+      <input type='hidden' name='_method' value="put">
+      <input type='text' name='zipcode' placeholder="New Zip Code" class="zipcode-button">
+      <input type="submit" value="Change!" class="zipcode-button">
+    </form>
+  </div>
 </div>
 
-<div class="zip-code-change white">
-  <p>Want to change your location?</p>
-  <form action='/users/<%=@user.id%>' method="post">
-    <input type='hidden' name='_method' value="put">
-    <input type='text' name='zipcode' placeholder="New Zip Code" class="zipcode-button">
-    <input type="submit" value="Change!" class="zipcode-button">
-  </form>
-</div>
+
