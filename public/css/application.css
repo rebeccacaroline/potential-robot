@@ -94,9 +94,11 @@ labelz {
   width: 29.65%;
   padding-left: 1%;
   padding-bottom: 2%;
-  /*margin-top: -18%;*/
-  height: 40%;
+  margin-top: 60%;
+  /*height: 2%;*/
   background-color: rgba(0,0,0,0.2);
+  /*margin-left: 10%*/
+  position: absolute;
 }
 
 #logout {
@@ -130,8 +132,8 @@ labelz {
   float: right;
   height: 23%;
   margin-top: 3%;
-  /*padding-right: 1%;
-  padding-left: 1%;*/
+  padding-right: 5%;
+  padding-left: 1%;
   padding-bottom: 2%;
   background-color: rgba(0,0,0,0.2);
 }
@@ -140,6 +142,10 @@ labelz {
   margin-top: -15%;
   padding-left: 8px;
   padding-bottom: 10px;
+  display: table-cell;
+  vertical-align: bottom;
+  margin-right: auto;
+  margin-left: auto;
   background-color: rgba(0,0,0,0.2);
   border-radius: 15px;
   text-align: center;
