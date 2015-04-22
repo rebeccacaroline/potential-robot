@@ -24,7 +24,7 @@ $(document).ready(function() {
   }
 
   var outfit = function(location, temp){
-    var weatherInLocation = "The weather in "+location+" is ."
+    var weatherInLocation = "The weather in "+location+" is "+temp+"."
       if (temp < 30){
         alert(weatherInLocation + "Seriously consider moving elsewhere.");
       } else if (temp > 30 && temp < 40){
@@ -32,7 +32,7 @@ $(document).ready(function() {
       } else if (temp > 40 && temp < 50) {
         alert(weatherInLocation + "Wear jeans, boots, long-sleeved shirt, jacket.");
       } else if (temp > 50 && temp < 60) {
-        alert(weatherInLocation + " wear jeans, sneakers, t-shirt, sweater, and jacket.");
+        alert(weatherInLocation + " Wear jeans, sneakers, t-shirt, sweater, and jacket.");
       } else if (temp > 60 && temp < 70) {
         alert(weatherInLocation + " Wear a patterned skirt, solid shirt, tights, flats!");
       } else if (temp > 70 && temp < 80) {
